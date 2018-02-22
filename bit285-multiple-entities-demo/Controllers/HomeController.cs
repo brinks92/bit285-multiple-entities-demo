@@ -40,8 +40,9 @@ namespace IndyBooks.Controllers
         public ActionResult AddBook()
         {
             //TODO: Create a new ViewModel object, assign values to its collections, and pass it to the View
-
-            return View();
+            var add = new AddBookViewModel();
+            add.Author = db.Authors;
+            return View(add);
         }
 
         [HttpPost]
@@ -53,8 +54,15 @@ namespace IndyBooks.Controllers
                 db.SaveChanges();
                 return View("Books", db.Books);
             }
+            
+            
             //TODO: Update your Book Listing  View to display the Authors Full Name, rather than the AuthorID
             return View();
+        }
+
+        public ActionResult Books(Book book)
+        {   
+            return View(book);
         }
 
     }

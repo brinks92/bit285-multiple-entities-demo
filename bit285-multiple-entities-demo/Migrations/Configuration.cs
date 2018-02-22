@@ -60,6 +60,32 @@ namespace bit285_multiple_entities_demo.Migrations
                     AuthorID = 3,
                     Price = 9.95M
 
+                },
+                new Book()
+                {
+                    BookID = 7,
+                    Title = "Thee",
+                    AuthorID = 4,
+                    Price = 9.80M
+
+                }
+                ,
+                new Book()
+                {
+                    BookID = 8,
+                    Title = "There",
+                    AuthorID = 4,
+                    Price = 9.29M
+
+                }
+                ,
+                new Book()
+                {
+                    BookID = 9,
+                    Title = "The art",
+                    AuthorID = 5,
+                    Price = 9.10M
+
                 });
             // Added several Author records
             context.Authors.AddOrUpdate(a => a.AuthorID,
@@ -80,6 +106,24 @@ namespace bit285_multiple_entities_demo.Migrations
                     AuthorID = 3,
                     FirstName = "Ursula",
                     LastName = "Le Guin"
+                },
+                new Author()
+                {
+                    AuthorID = 4,
+                    FirstName = "Ur",
+                    LastName = "Lin"
+                },
+                new Author()
+                {
+                    AuthorID = 5,
+                    FirstName = "Johnny",
+                    LastName = "Baba"
+                },
+                new Author()
+                {
+                    AuthorID = 6,
+                    FirstName = "baba",
+                    LastName = "coulfield"
                 });
             //TODO: Seed a few more Member records
             context.Members.AddOrUpdate(m => m.MemberID,
@@ -88,15 +132,51 @@ namespace bit285_multiple_entities_demo.Migrations
                     MemberID = 1,
                     FirstName = "Ian",
                     LastName = "Bansenauer"
+                },
+                new Member()
+                {
+                    MemberID = 2,
+                    FirstName = "robbie",
+                    LastName = "smidth"
+                },
+                new Member()
+                {
+                    MemberID = 3,
+                    FirstName = "robe",
+                    LastName = "smith"
+                },
+                new Member()
+                {
+                    MemberID = 4,
+                    FirstName = "chris",
+                    LastName = "wayde"
                 });
             //TODO: Seed a few more Purchase records
             context.Purchases.AddOrUpdate(p => p.PurchaseID,
                 new Purchase()
                 {
                     PurchaseID = 1,
-                    Amount = 10.00M,
+                    Amount = 11.39M,
                     BookID = 6,
                     MemberID = 1
+                }, new Purchase()
+                {
+                    PurchaseID = 2,
+                    Amount = 50.00M,
+                    BookID = 5,
+                    MemberID = 2
+                }, new Purchase()
+                {
+                    PurchaseID = 3,
+                    Amount = 10.80M,
+                    BookID = 4,
+                    MemberID = 3
+                }, new Purchase()
+                {
+                    PurchaseID = 4,
+                    Amount = 20.80M,
+                    BookID = 3,
+                    MemberID = 4
                 });
 
         }
